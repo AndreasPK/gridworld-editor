@@ -79,22 +79,25 @@ pub struct GeneInfo {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
-pub struct NeuronType(pub String);
+pub struct NeuronType(pub PropertyValueType);
 
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
-pub struct GeneTag(pub String);
+pub struct GeneTag(pub PropertyValueType);
 
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
-pub struct GeneProperty(pub String);
+pub struct GeneProperty(pub PropertyValueType);
 
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
-pub struct OutputTag(pub String);
+pub struct OutputTag {
+    pub tag: PropertyValueType,
+    pub weight: PropertyValueType,
+}
 
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
-pub struct GeneBias(pub String);
+pub struct GeneBias(pub PropertyValueType);
 
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
-pub struct GeneMirroring(pub String);
+pub struct GeneMirroring(pub PropertyValueType);
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct PropertyValue {
