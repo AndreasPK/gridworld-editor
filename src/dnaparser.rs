@@ -68,8 +68,7 @@ pub struct GeneRecord {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
-pub struct GeneInfo {
-    pub encoded: String,
+pub struct DecodedGeneInfo {
     pub neuron_type: NeuronType,
     pub tag: GeneTag,
     pub properties: [GeneProperty; 8],
@@ -105,6 +104,24 @@ pub struct PropertyValue {
     pub value_type: PropertyValueType,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum PropertyValueTag {
+    PTNeuro,
+    PTTag,
+    PTProp1,
+    PTProp2,
+    PTProp3,
+    PTProp4,
+    PTProp5,
+    PTProp6,
+    PTProp7,
+    PTProp8,
+    PTAmpersand,
+    PTOutputTag,
+    PTBias,
+    PTMirror,
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 pub enum PropertyValueType {
     #[default]
@@ -114,6 +131,8 @@ pub enum PropertyValueType {
     PWeight,
     PBias,
     PMirror,
+    PNeuron,
+    PMysteryAmpersand,
 }
 
 impl PropertyValue {
@@ -131,6 +150,10 @@ impl PropertyValue {
             .map(|idx| idx as u8)?;
 
         Some(Self { raw, value_type })
+    }
+
+    pub fn from_char_int(c: char) -> Option<Self> {
+        Self::from_char(c, PropertyValueType::PInt)
     }
 
     pub fn to_char(self) -> Option<char> {
@@ -159,10 +182,36 @@ impl PropertyValue {
     }
 
     const MIRROR_MAP: [&str; 15] = [
-        "P", "P+X", "P+Y", "P+XY", "P+X+Y", "P+X+XY", "P+Y+XY", "P+X+Y+XY",
-        "X", "Y", "XY", "X+Y", "X+XY", "Y+XY", "X+Y+XY",
+        "P", "P+X", "P+Y", "P+XY", "P+X+Y", "P+X+XY", "P+Y+XY", "P+X+Y+XY", "X", "Y", "XY", "X+Y",
+        "X+XY", "Y+XY", "X+Y+XY",
     ];
     pub fn as_mirror(self) -> &'static str {
-        Self::MIRROR_MAP[(self.raw%16) as usize]
+        Self::MIRROR_MAP[(self.raw % 16) as usize]
     }
 }
+
+pub mod parser {
+    use nom::{
+        IResult, Parser,
+        character::complete::{anychar, char},
+        combinator::map_opt,
+        sequence::preceded,
+    };
+
+    use crate::dnaparser::{PropertyValue, PropertyValueType};
+
+    fn prop_value(input: &str, kind: PropertyValueType) -> IResult<&str, PropertyValue> {
+        map_opt(preceded(char('*'), anychar), |c| PropertyValue::from_char(c, kind)).parse(input)
+    }
+
+    #[test]
+    fn test_prop_value() {
+        let input = "*A";
+        let parsed = prop_value(input, PropertyValueType::PInt);
+        assert!(parsed.is_ok());
+        let (rest, value) = parsed.unwrap();
+        assert_eq!(rest, "");
+        assert_eq!(value.raw, 0);
+    }
+}
+
