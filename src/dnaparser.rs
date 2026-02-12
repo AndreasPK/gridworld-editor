@@ -9,6 +9,13 @@ pub struct CreatureDNA {
     pub comments: Vec<String>,
 }
 
+fn parseCreateDNA(file_content: &str) -> Result<CreatureDNA> {
+    //TODO: Implement a parser and printer for CreatureDNA which can both parse and create strings like the files under data directory using the existing types in this module and the parser submodule for genes.
+    //Add a test that parses data/e5.txt into CreatureDNA, writes it to a temporary file, and then reparses it.
+    //Te result of the 2nd parsing should be the same as the result of the first parsing.
+
+}
+
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
 pub struct DnaMetadata {
     pub name: Option<String>,
@@ -67,6 +74,7 @@ pub struct GeneRecord {
     pub encoded: String,
 }
 
+// Represents both neuron properties as well as gene data
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct DecodedGeneInfo {
     pub neuron_type: NeuronType,
@@ -313,6 +321,7 @@ pub mod parser {
         assert_eq!(value.raw, 0);
     }
 
+    // Can decode both neuron properties as well as gene data
     fn decode_gene_info(input: &str) -> IResult<&str, super::DecodedGeneInfo> {
         let mut info = super::DecodedGeneInfo {
             neuron_type: super::NeuronType(PropertyValue::default()),
