@@ -67,11 +67,11 @@ pub struct GeneRecord {
     pub encoded: String,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Default)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct DecodedGeneInfo {
     pub neuron_type: NeuronType,
     pub tag: GeneTag,
-    pub properties: [GeneProperty; 8],
+    pub properties: [Option<GeneProperty>; 8],
     pub output_tags: Vec<OutputTag>,
     pub bias: GeneBias,
     pub mirroring: GeneMirroring,
@@ -101,13 +101,14 @@ pub struct GeneMirroring(pub PropertyValueType);
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct PropertyValue {
     pub raw: u8,
-    pub value_type: PropertyValueType,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-pub enum PropertyValueTag {
-    PTNeuro,
-    PTTag,
+pub enum PropertyTag {
+    PTNeuron, // *
+    PTTag, // $
+
+    // # @ % ^ + | { } Properties 1-8
     PTProp1,
     PTProp2,
     PTProp3,
@@ -116,10 +117,10 @@ pub enum PropertyValueTag {
     PTProp6,
     PTProp7,
     PTProp8,
-    PTAmpersand,
-    PTOutputTag,
-    PTBias,
-    PTMirror,
+    PTAmpersand, // &
+    PTOutputTag, // [
+    PTBias, // ~
+    PTMirror, // _
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
@@ -131,15 +132,13 @@ pub enum PropertyValueType {
     PWeight,
     PBias,
     PMirror,
-    PNeuron,
-    PMysteryAmpersand,
 }
 
 impl PropertyValue {
     const VALUE_MAP: &'static [u8; 64] =
         b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?!";
 
-    pub fn from_char(c: char, value_type: PropertyValueType) -> Option<Self> {
+    pub fn from_char(c: char) -> Option<Self> {
         if !c.is_ascii() {
             return None;
         }
@@ -149,11 +148,7 @@ impl PropertyValue {
             .position(|mapped| *mapped == c as u8)
             .map(|idx| idx as u8)?;
 
-        Some(Self { raw, value_type })
-    }
-
-    pub fn from_char_int(c: char) -> Option<Self> {
-        Self::from_char(c, PropertyValueType::PInt)
+        Some(Self { raw })
     }
 
     pub fn to_char(self) -> Option<char> {
@@ -198,20 +193,47 @@ pub mod parser {
         sequence::preceded,
     };
 
-    use crate::dnaparser::{PropertyValue, PropertyValueType};
+    use crate::dnaparser::{PropertyValue, PropertyTag, PropertyValueType};
 
-    fn prop_value(input: &str, kind: PropertyValueType) -> IResult<&str, PropertyValue> {
-        map_opt(preceded(char('*'), anychar), |c| PropertyValue::from_char(c, kind)).parse(input)
+    fn prop_value(input: &str) -> IResult<&str, PropertyValue> {
+        map_opt(anychar, PropertyValue::from_char).parse(input)
     }
+
+
 
     #[test]
     fn test_prop_value() {
         let input = "*A";
-        let parsed = prop_value(input, PropertyValueType::PInt);
+        let parsed = prop_value(input);
         assert!(parsed.is_ok());
         let (rest, value) = parsed.unwrap();
         assert_eq!(rest, "");
         assert_eq!(value.raw, 0);
     }
+
+    fn decode_gene_info(input: &str) -> IResult<&str, super::DecodedGeneInfo> {
+        //
+        /*TODO: Implement:
+        Use the comments on PropertyTag to map characters to what key they are
+        The goal is to decode gene info from a string like "*Y$m#7@0%a^9+3|M{U}M~m&W[vm[gW[cf[b4[vT[Dk[?m[S8[!n[rW[tN[fv[Bu[VQ[4T[wF[Xe[D7[VB[uX[?3[!l"
+
+        Walk over the string. The string consists of a sequence of key-value pairs.
+        For each pair the first character tells us what the value represents.
+        After the key there is one character that represents the value, except for output tags which have two values, a tag and weight in that order.
+
+        Write a nom parser that parses/decodes strings like this and allocates a DecodedGeneInfo based on it.
+        */
+
+    }
+
+// pub struct DecodedGeneInfo {
+//     pub neuron_type: NeuronType,
+//     pub tag: GeneTag,
+//     pub properties: [GeneProperty; 8],
+//     pub output_tags: Vec<OutputTag>,
+//     pub bias: GeneBias,
+//     pub mirroring: GeneMirroring,
+// }
+
 }
 
