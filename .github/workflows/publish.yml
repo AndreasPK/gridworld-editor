@@ -5,6 +5,9 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 env:
   CARGO_TERM_COLOR: always
 
@@ -29,3 +32,13 @@ jobs:
         if-no-files-found: error
         overwrite: true
         retention-days: 30
+    - name: Publish EXE to GitHub Release
+      uses: ncipollo/release-action@v1
+      with:
+        tag: latest
+        name: Latest Build
+        prerelease: true
+        allowUpdates: true
+        removeArtifacts: true
+        replacesArtifacts: true
+        artifacts: target/release/gridworld-editor.exe
