@@ -4,6 +4,10 @@ A simple tool to edit creature DNA for gridworld.
 
 WARNING: This is partially vibe coded and the quality is accordingly.
 
+As of writing of this readme it looked like this:
+
+![Example screenshot of interface](Example.png)
+
 ## How can I use this?
 
 * In gridworld export a creature of choice:
