@@ -1,0 +1,31 @@
+name: Rust-Publish
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Test
+      run: cargo test --verbose
+    - name: Build
+      run: cargo build --release
+    - name: Run tests
+      run: cargo test --verbose
+    - name: Upload EXE artifact
+      uses: actions/upload-artifact@v6
+      with:
+        name: gridworld-editor-windows-exe
+        path: target/release/gridworld-editor.exe
+        if-no-files-found: error
+        overwrite: true
+        retention-days: 30
