@@ -1,0 +1,34 @@
+/////////////////////////////////////////////////////////////////////////////////////
+//name:    Latcher
+//date:    2025-07-13 16:30:50.623
+//version: Gridworld v1.29.9.10
+
+//creature: 
+skin_color = aHa
+
+//cells: 
+neuron_properties[3][0] = *W$M#B@F%A^A+y|A{A}A~8&A[Y8
+neuron_properties[4][0] = *z$M#B@F%A^A+y|A{A}A~8&A[Y8
+neuron_properties[5][0] = *W$0#B@F%A^A+y|A{A}A~8&A[g8
+neuron_properties[4][1] = *H$D#E@F%A^A+y|A{A}A~8&A[Y8
+neuron_properties[4][2] = *e$N#U@z%r^g+H|A{A}A~8&6[J8[M8[E8[08
+neuron_properties[4][3] = *3$T#U@z%r^g+H|A{A}A~8&6[N8
+neuron_properties[4][4] = *J$A#A@A%A^A+A|A{A}A~A&A
+neuron_properties[4][5] = *K$R#A@d%A^A+y|A{B}C~8&A[Ag
+neuron_properties[4][6] = *a$E#a@H%a^Z+P|B{A}A~8&A[R8
+neuron_properties[1][0] = *D$A#A@A%A^A+A|A{A}A~A
+neuron_properties[1][3] = *Z$A#A@A%D^A+A|A{A}A~A
+
+//dna: LTCmi?BVo
+dna_name[4][4] = LTCmi?BVo
+dna_location = [4][4]
+dna_creator[4][4] = creator
+
+gene[3][0][0] = *W$M#B@F%A^A+y|A{A}A~8&A_B[Y8
+gene[4][0][0] = *z$M#B@F%A^A+y|A{A}A~8&A_B[Y8
+gene[4][1][0] = *H$M#E@F%A^A+y|A{A}A~8&A_B
+gene[4][2][0] = *e$N#U@z%r^g+H|A{A}A~8&6[J8[M8[E8[08
+gene[4][3][0] = *3$T#U@z%r^g+H|A{A}A~8&6[N8
+gene[4][5][0] = *K$R#A@d%A^A+y|A{B}C~8&A[Ag
+gene[4][6][0] = *a$E#a@H%a^Z+P|B{A}A~8&A[R8
+

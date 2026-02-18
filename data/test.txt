@@ -1,0 +1,69 @@
+/////////////////////////////////////////////////////////////////////////////////////
+//name:    e5
+//date:    2026-01-30 15:28:33.226
+//version: Gridworld v1.33
+
+//creature: 
+skin_color = PBT
+
+//cells: 
+neuron_properties[1][0] = *Y$P#P@n%E^u+F|7{t}Z~0&R[IU[DN[fw[RI[q4[01[Pl[XE[R6[Jk[8s[KX[Rj[Wa[rB[kz[!C[Je[1S[Di[lx[Xj[7V[l8
+neuron_properties[2][0] = *J$A#A@A%A^A+A|A{A}A~A&A
+neuron_properties[3][0] = *K$z#A@r%3^w+g|Y{n}j~n&S[o5
+neuron_properties[5][0] = *n$o#T@k%!^n+P|N{O}r~R&r[?V[7X[80[0T[mJ[ND[JZ[rw[OT[bS[mZ[VL[4f[ZF[EO[XX[8C[hR[qS
+neuron_properties[7][0] = *Y$3#P@n%E^u+F|7{t}Z~0&R[wU[7N[nw[pI[S4[M1[3l[vE[p6[xk[Es[yX[pj[ua[TB[cz[HC[xe[NS[7i[dx[vj[DV[d8
+neuron_properties[0][1] = *4$K#k@v%K^9+H|0{B}h~0&F[1Q[1J
+neuron_properties[1][1] = *C$4#l@7%f^N+X|A{C}U~s&k[xf[6r[Z9[cy[Sz[aR[sN[aP[GB[ra[bO[F4[Ew[k1[Ki[Up[YN[K4[EK[dB[0u
+neuron_properties[2][1] = *a$R#P@B%T^L+h|B{H}1~2&j[WQ[w?[Ta[b1[Pz[JS
+neuron_properties[3][1] = *j$d#V@v%v^a+s|0{G}a~l&o[1C[cL[kC[VM[a3[9H[DU[n6[e?[AY[9L[Zg[w9[IL[GA[Rv[1Y[5h[Ft[6?[xI
+neuron_properties[4][1] = *c$!#A@E%2^j+!|c{p}A~m&V[tt[aP[Rc[sS[zk[3I[ol[Jh[Rl[4p[rf[Tx[mt[jJ
+neuron_properties[5][1] = *j$l#V@v%v^a+s|0{G}a~l&o[NC[kL[cC[tM[i3[FH[7U[f6[m?[4Y[FL[hg[I9[wL[?A[pv[NY[Bh[9t[C?[JI
+neuron_properties[7][1] = *C$A#l@7%f^N+X|A{C}U~s&k[Jf[Cr[h9[ky[qz[iR[UN[iP[?B[Ta[jO[94[8w[c1[yi[sp[gN[y4[8K[lB[Mu
+neuron_properties[8][1] = *4$y#k@v%K^9+H|0{B}h~0&F[NQ[NJ
+neuron_properties[0][2] = *H$W#Y@W%Q^d+m|I{t}k~b&A[fk
+neuron_properties[3][2] = *Y$e#7@0%a^9+3|M{U}M~m&W[Xm[YW[kf[j4[XT[7k[Gm[q8[Hn[TW[VN[nv[5u[tQ[AT[IF[ve[77[tB[WX[G3[Hl
+neuron_properties[5][2] = *Y$m#7@0%a^9+3|M{U}M~m&W[vm[gW[cf[b4[vT[Dk[?m[S8[!n[rW[tN[fv[Bu[VQ[4T[wF[Xe[D7[VB[uX[?3[!l
+neuron_properties[8][2] = *H$u#Y@W%Q^d+m|I{t}k~b&A[nk
+neuron_properties[0][3] = *c$A#4@X%Z^S+f|A{j}7~7&G[S9[lP[uc[TS[Qm[Ml[II[Xl[2h[ul[Us[TW[sx[Zb[nX[MR
+neuron_properties[4][3] = *H$A#A@?%c^Z+1|W{n}R~X&g[F1[Yl[CO[9y[i3[Zb[?6[F2[FR[Uu[Ql[eB[p5[Yd[Fy[nx[fZ[Ub[wW[bR[9E[NT[no[MB
+neuron_properties[0][4] = *c$5#A@2%m^j+!|j{O}P~!&1[ND[fL[aY[!x[fY[Mj[yD[L2[LM[Xb[mH[Un[YK[er[O7[vY[XJ
+neuron_properties[5][4] = *0$O#a@x%S^B+z|j{O}y~D&S[yR[tG[nc[fl[1X[7Q[00[iZ[N7[JH[ya[ZR[2k[lK[gg[JJ[bj[fT
+neuron_properties[8][4] = *c$G#A@2%m^j+!|j{O}P~!&1[yD[gL[lY[Ax[gY[zj[ND[02[0M[ob[ZH[rn[nK[hr[x7[QY[oJ
+neuron_properties[0][5] = *c$H#4@X%Z^S+f|A{j}7~7&G[V9[iP[pc[US[Xm[Ll[PI[Ql[xh[pl[Ts[UW[rx[eb[gX[LR
+neuron_properties[4][5] = *H$H#A@?%c^Z+1|W{n}R~X&g[C1[fl[FO[6y[l3[eb[56[C2[CR[Tu[Xl[ZB[u5[fd[Cy[gx[YZ[Tb[3W[cR[6E[KT[go[LB
+neuron_properties[6][5] = *e$R#a@U%N^?+c|1{J}R~F&k[Hb[PP[V3[5g[hZ[y9[NR[ZI[wA[xt[js[ts[Bv[s5[hn[g8[OM[VW[hP[Wz[XJ[RR
+neuron_properties[8][5] = *c$!#4@X%Z^S+f|A{j}7~7&G[t9[aP[Rc[sS[vm[zl[3I[ol[Jh[Rl[rs[sW[Tx[mb[YX[zR
+neuron_properties[2][6] = *Y$l#4@9%A^!+a|1{6}z~k&n[XW[E?[pm[Z0[Cy[h3[Sz[O9[7C[iV[CT
+neuron_properties[8][6] = *H$p#Y@W%Q^d+m|I{t}k~b&A[gk
+neuron_properties[1][7] = *C$!#l@7%f^N+X|A{C}U~s&k[2f[9r[e9[by[Vz[dR[rN[dP[BB[sa[cO[C4[Dw[j1[Ni[Tp[fN[N4[DK[aB[zu
+neuron_properties[3][7] = *j$a#V@v%v^a+s|0{G}a~l&o[yC[bL[jC[SM[d3[6H[EU[g6[Z?[HY[6L[eg[39[PL[BA[Wv[yY[?h[Ct[9?[2I
+neuron_properties[4][7] = *c$4#A@E%2^j+!|c{p}A~m&V[qt[dP[Wc[rS[0k[wI[vl[Oh[Wl[!p[sf[Ux[ht[kJ
+neuron_properties[5][7] = *j$i#V@v%v^a+s|0{G}a~l&o[KC[jL[bC[qM[l3[CH[8U[Y6[h?[!Y[CL[mg[P9[3L[5A[uv[KY[Gh[6t[F?[OI
+neuron_properties[7][7] = *C$H#l@7%f^N+X|A{C}U~s&k[Of[Fr[m9[jy[tz[lR[TN[lP[5B[Ua[kO[64[7w[b1[1i[rp[nN[14[7K[iB[Lu
+
+//dna: gd0bqJiTl
+dna_name[2][0] = gd0bqJiTl
+dna_location = [2][0]
+dna_creator[2][0] = lessismore
+
+gene[1][0][0] = *Y$P#P@n%E^u+F|7{t}Z~0&R_B[IU[DN[fw[RI[q4[01[Pl[XE[R6[Jk[8s[KX[Rj[Wa[rB[kz[!C[Je[1S[Di[lx[Xj[7V[l8
+gene[5][0][0] = *n$o#T@k%!^n+P|N{O}r~R&r_e[?V[7X[80[0T[mJ[ND[JZ[rw[OT[bS[mZ[VL[4f[ZF[EO[XX[8C[hR[qS
+gene[5][1][0] = *j$l#V@v%v^a+s|0{G}a~l&o_H[NC[kL[cC[tM[i3[FH[7U[f6[m?[4Y[FL[hg[I9[wL[?A[pv[NY[Bh[9t[C?[JI
+gene[8][1][0] = *4$y#k@v%K^9+H|0{B}h~0&F_f[NQ[NJ
+gene[0][2][0] = *H$W#Y@W%Q^d+m|I{t}k~b&A_j[fk
+gene[8][2][0] = *G$F#v@J%Q^K+g|e{T}8~2&I_A[84[p?[!M[1r[eA[lq[0b[s?[xj[Kn[0H[Ds[Am[k7[ak[QJ[xl
+gene[6][3][0] = *e$W#a@U%N^?+c|1{J}R~F&k_n[Ab[IP[S3[?g[mZ[19[KR[eI[3A[2t[ks[qs[Gv[r5[mn[n8[JM[SW[mP[Rz[QJ[WR
+gene[8][3][0] = *c$4#4@X%Z^S+f|A{j}7~7&G_d[q9[dP[Wc[rS[om[0l[wI[vl[Oh[Wl[ss[rW[Ux[hb[fX[0R
+gene[5][4][0] = *0$J#a@x%S^B+z|j{O}y~D&S_J[1R[qG[gc[Yl[yX[8Q[z0[lZ[K7[OH[1a[eR[xk[iK[ng[OJ[cj[YT
+gene[8][4][0] = *c$G#A@2%m^j+!|j{O}P~!&1_![yD[gL[lY[Ax[gY[zj[ND[02[0M[ob[ZH[rn[nK[hr[x7[QY[oJ
+gene[4][5][0] = *H$H#A@?%c^Z+1|W{n}R~X&g_g[C1[fl[FO[6y[l3[eb[56[C2[CR[Tu[Xl[ZB[u5[fd[Cy[gx[YZ[Tb[3W[cR[6E[KT[go[LB
+gene[2][6][0] = *Y$l#4@9%A^!+a|1{6}z~k&n_t[XW[E?[pm[Z0[Cy[h3[Sz[O9[7C[iV[CT
+gene[3][6][0] = *Y$Z#7@0%a^9+3|M{U}M~m&W_6[Qm[fW[jf[k4[QT[8k[Bm[t8[An[UW[SN[gv[?u[qQ[HT[PF[oe[87[qB[RX[B3[Al
+gene[5][6][0] = *t$h#3@V%z^h+D|q{E}C~c&j_K[Fu[A0[HD
+gene[8][6][0] = *f$J#r@m%y^N+B|B{9}O~s&j_n[!Z[ZV[3j[DQ[dS[1I[Ru[lt[Wi[LJ[Tn[9z
+gene[2][7][0] = *a$W#P@B%T^L+h|B{H}1~2&j_2[RQ[3?[Ua[c1[Iz[OS
+gene[4][7][0] = *c$4#A@E%2^j+!|c{p}A~m&V_H[qt[dP[Wc[rS[0k[wI[vl[Oh[Wl[!p[sf[Ux[ht[kJ
+gene[7][7][0] = *C$H#l@7%f^N+X|A{C}U~s&k_W[Of[Fr[m9[jy[tz[lR[TN[lP[5B[Ua[kO[64[7w[b1[1i[rp[nN[14[7K[iB[Lu
+gene[3][8][0] = *K$0#A@r%3^w+g|Y{n}j~n&S_r[v5
+gene[6][8][0] = *4$S#3@B%A^2+t|9{e}l~a&t_o[Em[tG[IU[Wl[?S[Zj[b2[ha[RR[Fh[o?[YE[Mz[TV[vt[ZT[QB
+

@@ -1,0 +1,192 @@
+/////////////////////////////////////////////////////////////////////////////////////
+//name:    Latcher
+//date:    2025-07-13 16:30:50.623
+//version: Gridworld v1.29.9.10
+
+//creature: 
+skin_color = aHa
+
+//cells: 
+neuron_properties[3][0] = *W$M#B@F%A^A+y|A{A}A~8&A[Y8
+neuron_properties[4][0] = *z$M#B@F%A^A+y|A{A}A~8&A[Y8
+neuron_properties[5][0] = *W$0#B@F%A^A+y|A{A}A~8&A[g8
+neuron_properties[4][1] = *H$D#E@F%A^A+y|A{A}A~8&A[Y8
+neuron_properties[4][2] = *e$N#U@z%r^g+H|A{A}A~8&6[J8[M8[E8[08
+neuron_properties[4][3] = *3$T#U@z%r^g+H|A{A}A~8&6[N8
+neuron_properties[4][4] = *J$A#A@A%A^A+A|A{A}A~A&A
+neuron_properties[4][5] = *K$R#A@d%A^A+y|A{B}C~8&A[Ag
+neuron_properties[4][6] = *a$E#a@H%a^Z+P|B{A}A~8&A[R8
+
+//dna: LTCmi?BVo
+dna_name[4][4] = LTCmi?BVo
+dna_location = [4][4]
+dna_creator[4][4] = creator
+
+gene[3][0][0] = *W$M#B@F%A^A+y|A{A}A~8&A_B[Y8
+gene[4][0][0] = *z$M#B@F%A^A+y|A{A}A~8&A_B[Y8
+gene[4][1][0] = *H$M#E@F%A^A+y|A{A}A~8&A_B
+gene[4][2][0] = *e$N#U@z%r^g+H|A{A}A~8&6_A[J8[M8[E8[08
+gene[4][3][0] = *3$T#U@z%r^g+H|A{A}A~8&6_A[N8
+gene[4][5][0] = *K$R#A@d%A^A+y|A{B}C~8&A_A[Ag
+gene[4][6][0] = *a$E#a@H%a^Z+P|B{A}A~8&A_A[R8
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+//help:
+
+//property types:
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//property symbol     property type                 value type                              
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//*                   neuron type                   neuron type                             
+//$                   tag                           tag                                     
+//&                   threshold                     threshold value                         
+//#                   property 1                    value symbol / int value / float value  
+//@                   property 2                    value symbol / int value / float value  
+//%                   property 3                    value symbol / int value / float value  
+//^                   property 4                    value symbol / int value / float value  
+//+                   property 5                    value symbol / int value / float value  
+//|                   property 6                    value symbol / int value / float value  
+//{                   property 7                    value symbol / int value / float value  
+//}                   property 8                    value symbol / int value / float value  
+//[                   outputtag, weight             tag, weight value                       
+//~                   bias                          bias value                              
+//_                   mirroring                     mirror value                            
+
+//values types:
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//value symbol        tag                 neuron type                   int value           float value         threshold value     weight value        bias value          mirror value        
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//A                   A                   antenna                       0                   0.0                 0.0                 -2.5                0.0                 P                   
+//B                   B                   anti-toxin emitter            1                   0.015873017         0.03968254          -2.420635           0.03968254          P+X                 
+//C                   C                   armor                         2                   0.031746034         0.07936508          -2.34127            0.07936508          P+Y                 
+//D                   D                   blank cell                    3                   0.04761905          0.11904762          -2.2619047          0.11904762          P+XY                
+//E                   E                   blinker                       4                   0.06349207          0.15873016          -2.1825397          0.15873016          P+X+Y               
+//F                   F                   cell color sensor             5                   0.07936508          0.1984127           -2.1031747          0.1984127           P+X+XY              
+//G                   G                   counter                       6                   0.0952381           0.23809524          -2.0238094          0.23809524          P+Y+XY              
+//H                   H                   digester cell                 7                   0.11111111          0.2777778           -1.9444444          0.2777778           P+X+Y+XY            
+//I                   I                   direction sensor              8                   0.12698413          0.31746033          -1.8650794          0.31746033          X                   
+//J                   J                   dna                           9                   0.14285715          0.35714287          -1.7857144          0.35714287          Y                   
+//K                   K                   dna copier                    10                  0.15873016          0.3968254           -1.7063493          0.3968254           XY                  
+//L                   L                   dna builder                   11                  0.17460318          0.43650794          -1.6269841          0.43650794          X+Y                 
+//M                   M                   energy change sensor          12                  0.1904762           0.47619048          -1.5476191          0.47619048          X+XY                
+//N                   N                   energy sensor                 13                  0.20634921          0.515873            -1.4682541          0.515873            Y+XY                
+//O                   O                   energy sharer                 14                  0.22222222          0.5555556           -1.388889           0.5555556           X+Y+XY              
+//P                   P                   external receiver             15                  0.23809524          0.5952381           -1.3095238          0.5952381           P                   
+//Q                   Q                   external sender               16                  0.25396827          0.63492066          -1.2301587          0.63492066          P+X                 
+//R                   R                   eye                           17                  0.26984128          0.6746032           -1.1507936          0.6746032           P+Y                 
+//S                   S                   feeder                        18                  0.2857143           0.71428573          -1.0714285          0.71428573          P+XY                
+//T                   T                   fin                           19                  0.3015873           0.7539683           -0.9920634          0.7539683           P+X+Y               
+//U                   U                   fuser                         20                  0.31746033          0.7936508           -0.9126984          0.7936508           P+X+XY              
+//V                   V                   group connection sensor       21                  0.33333334          0.8333334           -0.83333325         0.8333334           P+Y+XY              
+//W                   W                   group connector               22                  0.34920636          0.8730159           -0.75396824         0.8730159           P+X+Y+XY            
+//X                   X                   group disconnector            23                  0.36507937          0.91269845          -0.6746031          0.91269845          X                   
+//Y                   Y                   jet                           24                  0.3809524           0.95238096          -0.5952381          0.95238096          Y                   
+//Z                   Z                   lamp                          25                  0.3968254           0.9920635           -0.51587296         0.9920635           XY                  
+//a                   a                   membrane maker                26                  0.41269842          1.031746            -0.4365079          1.031746            X+Y                 
+//b                   b                   momentum sensor               27                  0.42857143          1.0714285           -0.35714284         1.0714285           X+XY                
+//c                   c                   mouth                         28                  0.44444445          1.1111112           -0.27777776         1.1111112           Y+XY                
+//d                   d                   movement sensor               29                  0.46031746          1.1507937           -0.19841269         1.1507937           X+Y+XY              
+//e                   e                   neuron                        30                  0.47619048          1.1904762           -0.11904761         1.1904762           P                   
+//f                   f                   pain sensor                   31                  0.4920635           1.2301587           -0.039682537        1.2301587           P+X                 
+//g                   g                   painter                       32                  0.50793654          1.2698413           0.039682686         1.2698413           P+Y                 
+//h                   h                   pheromone emitter             33                  0.52380955          1.3095238           0.11904776          1.3095238           P+XY                
+//i                   i                   pheromone sensor              34                  0.53968257          1.3492064           0.19841284          1.3492064           P+X+Y               
+//j                   j                   photosynthesis                35                  0.5555556           1.388889            0.2777779           1.388889            P+X+XY              
+//k                   k                   pigment cell                  36                  0.5714286           1.4285715           0.35714298          1.4285715           P+Y+XY              
+//l                   l                   piston                        37                  0.5873016           1.4682541           0.43650806          1.4682541           P+X+Y+XY            
+//m                   m                   poison maker                  38                  0.6031746           1.5079366           0.51587313          1.5079366           X                   
+//n                   n                   randomizer                    39                  0.61904764          1.5476191           0.5952382           1.5476191           Y                   
+//o                   o                   random input                  40                  0.63492066          1.5873016           0.6746033           1.5873016           XY                  
+//p                   p                   relative sensor               41                  0.6507937           1.6269841           0.75396836          1.6269841           X+Y                 
+//q                   q                   rotation sensor               42                  0.6666667           1.6666667           0.83333343          1.6666667           X+XY                
+//r                   r                   side fin                      43                  0.6825397           1.7063493           0.9126985           1.7063493           Y+XY                
+//s                   s                   side jet                      44                  0.6984127           1.7460318           0.9920636           1.7460318           X+Y+XY              
+//t                   t                   signal receiver               45                  0.71428573          1.7857144           1.0714287           1.7857144           P                   
+//u                   u                   signal sender                 46                  0.73015875          1.8253969           1.1507938           1.8253969           P+X                 
+//v                   v                   skin color changer            47                  0.74603176          1.8650794           1.2301588           1.8650794           P+Y                 
+//w                   w                   slime emitter                 48                  0.7619048           1.9047619           1.3095238           1.9047619           P+XY                
+//x                   x                   slippery cell                 49                  0.7777778           1.9444444           1.388889            1.9444444           P+X+Y               
+//y                   y                   sticky cell                   50                  0.7936508           1.984127            1.4682541           1.984127            P+X+XY              
+//z                   z                   stinger                       51                  0.8095238           2.0238094           1.5476191           2.0238094           P+Y+XY              
+//0                   0                   storage cell                  52                  0.82539684          2.063492            1.6269841           2.063492            P+X+Y+XY            
+//1                   1                   target turner                 53                  0.84126985          2.1031747           1.7063493           2.1031747           X                   
+//2                   2                   threshold changer             54                  0.85714287          2.142857            1.7857144           2.142857            Y                   
+//3                   3                   ticker                        55                  0.8730159           2.1825397           1.8650794           2.1825397           XY                  
+//4                   4                   turner                        56                  0.8888889           2.2222223           1.9444444           2.2222223           X+Y                 
+//5                   5                   venom emitter                 57                  0.9047619           2.2619047           2.0238094           2.2619047           X+XY                
+//6                   6                   web emitter                   58                  0.9206349           2.3015873           2.1031747           2.3015873           Y+XY                
+//7                   7                   web sensor                    59                  0.93650794          2.34127             2.1825397           2.34127             X+Y+XY              
+//8                   8                   web turner                    60                  0.95238096          2.3809524           2.2619047           2.3809524           P                   
+//9                   9                   web walker                    61                  0.96825397          2.420635            2.34127             2.420635            P+X                 
+//?                   ?                                                 62                  0.984127            2.4603174           2.420635            2.4603174           P+Y                 
+//!                   !                                                 63                  1.0                 2.5                 2.5                 2.5                 P+XY                
+
+//tag mirrors:
+////////////////////////////////////////////////////////////////////////////////////////////////
+//tag                 x                   y                   xy                  
+////////////////////////////////////////////////////////////////////////////////////////////////
+//A                   4                   H                   !                   
+//B                   5                   G                   ?                   
+//C                   6                   F                   9                   
+//D                   7                   E                   8                   
+//E                   8                   D                   7                   
+//F                   9                   C                   6                   
+//G                   ?                   B                   5                   
+//H                   !                   A                   4                   
+//I                   w                   P                   3                   
+//J                   x                   O                   2                   
+//K                   y                   N                   1                   
+//L                   z                   M                   0                   
+//M                   0                   L                   z                   
+//N                   1                   K                   y                   
+//O                   2                   J                   x                   
+//P                   3                   I                   w                   
+//Q                   o                   X                   v                   
+//R                   p                   W                   u                   
+//S                   q                   V                   t                   
+//T                   r                   U                   s                   
+//U                   s                   T                   r                   
+//V                   t                   S                   q                   
+//W                   u                   R                   p                   
+//X                   v                   Q                   o                   
+//Y                   g                   f                   n                   
+//Z                   h                   e                   m                   
+//a                   i                   d                   l                   
+//b                   j                   c                   k                   
+//c                   k                   b                   j                   
+//d                   l                   a                   i                   
+//e                   m                   Z                   h                   
+//f                   n                   Y                   g                   
+//g                   Y                   n                   f                   
+//h                   Z                   m                   e                   
+//i                   a                   l                   d                   
+//j                   b                   k                   c                   
+//k                   c                   j                   b                   
+//l                   d                   i                   a                   
+//m                   e                   h                   Z                   
+//n                   f                   g                   Y                   
+//o                   Q                   v                   X                   
+//p                   R                   u                   W                   
+//q                   S                   t                   V                   
+//r                   T                   s                   U                   
+//s                   U                   r                   T                   
+//t                   V                   q                   S                   
+//u                   W                   p                   R                   
+//v                   X                   o                   Q                   
+//w                   I                   3                   P                   
+//x                   J                   2                   O                   
+//y                   K                   1                   N                   
+//z                   L                   0                   M                   
+//0                   M                   z                   L                   
+//1                   N                   y                   K                   
+//2                   O                   x                   J                   
+//3                   P                   w                   I                   
+//4                   A                   !                   H                   
+//5                   B                   ?                   G                   
+//6                   C                   9                   F                   
+//7                   D                   8                   E                   
+//8                   E                   7                   D                   
+//9                   F                   6                   C                   
+//?                   G                   5                   B                   
+//!                   H                   4                   A                   
+
