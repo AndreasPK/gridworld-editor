@@ -1,5 +1,9 @@
 # Gridworld DNA Editor
 
+A simple tool to edit creature DNA for gridworld.
+
+WARNING: This is partially vibe coded and the quality is accordingly.
+
 ## How can I use this?
 
 * In gridworld export a creature of choice:
